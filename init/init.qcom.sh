@@ -35,10 +35,6 @@ else
     platformid=`cat /sys/devices/system/soc/soc0/id`
 fi
 
-if [ -f /vendor/bin/msm_irqbalance ]; then
-    start vendor.msm_irqbalance
-fi
-
 #
 # Make modem config folder and copy firmware config to that folder for RIL
 #
