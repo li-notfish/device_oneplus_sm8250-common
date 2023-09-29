@@ -5854,6 +5854,18 @@ case "$target" in
 		echo 40 > $npullccbw/polling_interval
 		echo 0 > /sys/devices/virtual/npu/msm_npu/pwr
 	    done
+
+	    # Enable mem_latency governor for LLCC, DDR, and L3
+	    for memlat in $device/*cpu*-lat/devfreq/*cpu*-lat \
+	                  $device/18590000.*-l3/18590000.*-l3-lat/devfreq/18590000.*-l3-lat
+	    do
+		echo "mem_latency" > $memlat/governor
+		echo 10 > $memlat/polling_interval
+	    done
+	    qcom="/sys/class/devfreq/18590000.qcom,devfreq-l3:qcom"
+	    echo 400   > $qcom,cpu0-cpu-l3-lat/mem_latency/ratio_ceil
+	    echo 4000  > $qcom,cpu4-cpu-l3-lat/mem_latency/ratio_ceil
+	    echo 20000 > $qcom,cpu7-cpu-l3-lat/mem_latency/ratio_ceil
 	done
         # memlat specific settings are moved to seperate file under
         # device/target specific folder
