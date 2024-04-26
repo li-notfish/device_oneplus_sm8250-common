@@ -116,27 +116,6 @@
           }
         }
       ]
-    },
-    {
-      "Name": "ServiceCapacityLow",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "system-background"
-          }
-        },
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "system-background"
-          }
-        }
-      ]
     }
   ]
 }
