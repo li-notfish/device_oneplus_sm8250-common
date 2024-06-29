@@ -127,6 +127,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# CertifiedPropsOverlay
+$(call inherit-product, vendor/extra/product.mk)
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
@@ -136,6 +139,11 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 # Device ID attestation
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    NexusLauncherRelease \
+    Settings
 
 # Display
 PRODUCT_PACKAGES += \
@@ -468,6 +476,9 @@ PRODUCT_COPY_FILES += \
 
 # VNDK
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
+
+# LTW
+$(call inherit-product-if-exists, vendor/microsoft/packages.mk)
 
 # WiFi
 PRODUCT_PACKAGES += \
