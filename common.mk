@@ -495,7 +495,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
 
 # LTW
-$(call inherit-product-if-exists, vendor/microsoft/packages.mk)
+$(call inherit-product, vendor/microsoft/mms/products/mms.mk)
 
 # WiFi
 PRODUCT_PACKAGES += \
