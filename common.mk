@@ -67,9 +67,6 @@ PRODUCT_PACKAGES += \
     libssrec \
     libvolumelistener
 
-PRODUCT_PACKAGES += \
-    DolbyManager
-
 TARGET_EXCLUDES_AUDIOFX := true
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio
@@ -184,6 +181,10 @@ PRODUCT_COPY_FILES += \
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze
+
+# Dolby
+PRODUCT_PACKAGES += \
+    OplusDolby
 
 # DRM
 PRODUCT_PACKAGES += \
