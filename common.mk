@@ -150,7 +150,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.supports_background_blur=1 \
-    ro.sf.blurs_are_expensive=1
+    ro.sf.blurs_are_expensive=1 \
+    dalvik.vm.dex2oat64.enabled=true
 
 # Dolby
 PRODUCT_PACKAGES += \
@@ -420,9 +421,6 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so
 
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
-
-# LTW
-$(call inherit-product, vendor/microsoft/mms/products/mms.mk)
 
 # WiFi
 PRODUCT_PACKAGES += \
