@@ -138,7 +138,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
-    gralloc.kona \
     libtinyxml \
     libvulkan \
     vendor.qti.hardware.display.allocator-service \
