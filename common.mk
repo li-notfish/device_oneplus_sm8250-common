@@ -62,8 +62,6 @@ PRODUCT_PACKAGES += \
     libssrec \
     libvolumelistener
 
-TARGET_EXCLUDES_AUDIOFX := true
-
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio
 
 PRODUCT_COPY_FILES += \
@@ -131,10 +129,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     NexusLauncherRelease \
     Settings
 
-# Dex2oat
-DEX2OAT_TARGET_CPU_VARIANT := cortex-a76
-DEX2OAT_TARGET_CPU_VARIANT_RUNTIME := cortex-a76
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
@@ -153,8 +147,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true
 
 # Dolby
-PRODUCT_PACKAGES += \
-    OplusDolby
+$(call inherit-product, hardware/oplus/dolby/dolby.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
